@@ -1,0 +1,32 @@
+services:
+  waha:
+    image: devlikeapro/waha:latest
+    container_name: wpp_bot_waha
+    restart: always
+    environment:
+      - ENGINE=WEBJS # ENGINE PARA RODAR O WHATSAPP [EXPLICITO POR MOTIVOS DE ERRO DE COMUNICAÇÃO FRONT/BACK]
+
+    ports:
+      - "3000:3000"
+
+
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: wpp_bot_api
+
+    #VÁRIAVEIS DE AMBIENTE
+    env_file:
+    - .env
+    
+    ports:
+      - "5000:5000"
+    # [ OPCIONAL ] depender do WAHA para que ele inicie primeiro
+
+    volumes:     # VOLUMES adicionado para persistir os dados do nosso vector store
+      - .:/app
+      - ./chroma_data:/app/chroma_data
+
+    depends_on:
+      - waha
