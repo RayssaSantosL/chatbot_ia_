@@ -6,7 +6,7 @@ Este projeto possui uma pasta ```rag/data``` -> dentro da pasta ```data``` você
 ![developer kitten](https://i.pinimg.com/736x/0f/1e/1a/0f1e1ae95fb24af9fd016023831e6bec.jpg)
 
 ## 📚 Conceitos Fundamentais em RAG
-Aqui vai uma pequna explicação para que você possa montar seu próprio RAG personalizado:
+Aqui vai uma pequena explicação para que você possa montar seu próprio RAG personalizado:
 
 **RAG (Retrieval-Augmented Generation)📕**
 
